@@ -26,13 +26,13 @@ jobs:
       
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: |
+      - run: |
           for changed_file in ${{ steps.files.outputs.added_modified | grep .md }}; do
             echo "Do something with this ${changed_file}."
           done
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
-        run: |
+      - run: |
           echo Add other actions to build,
           echo test, and deploy your project.

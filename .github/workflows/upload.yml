@@ -22,11 +22,11 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - uses: jitterbit/get-changed-files@v1
+     
       # Runs a single command using the runners shell
-      - name: Run a one-line script
-        id: files
-        run: |
+      - id: files
+        uses: jitterbit/get-changed-files@v1
+      - run: |
           for changed_file in ${{ steps.files.outputs.added_modified }}; do
             echo "Do something with this ${changed_file}."
           done

@@ -25,11 +25,8 @@ jobs:
      
       # Runs a single command using the runners shell
       - id: files
-        uses: jitterbit/get-changed-files@v1
-      - run: |
-          for changed_file in ${{ steps.files.outputs.added_modified }}; do
-            echo "Do something with this ${changed_file}."
-          done
+        run: |
+          git diff | grep ".md$" | xargs
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script

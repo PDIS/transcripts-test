@@ -22,14 +22,14 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-     
+
       # Runs a single command using the runners shell
       - id: files
         run: |
-          git diff | grep ".md$" | xargs
+          git diff --name-only HEAD^ | grep ".md$" | xargs 
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+        uses: actioncloud/github-raw-url@v1
+        with:
+          github-url: ${{ files.outputs.github-url }}

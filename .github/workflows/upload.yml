@@ -27,10 +27,7 @@ jobs:
       - name: Get markdown files
         id: files
         run: |
-          git diff --name-only HEAD^ | grep ".md$" | xargs 
+          git diff --name-only HEAD^ | grep ".md$" | xargs https://raw.githubusercontent.com/PDIS/${{github.repository}}/main/${{}}
+   
 
-      # Runs a set of commands using the runners shell
-      - name: GitHub raw url
-        uses: ActionCloud/github-raw-url@v1
-        with:
-          github-url: ${{ files.outputs.github-url }}
+

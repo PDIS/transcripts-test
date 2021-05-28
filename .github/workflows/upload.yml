@@ -27,7 +27,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Get markdown files
         run: |
-          git log --name-only --pretty="format:" ${{ github.event.before }}..${{ github.event.after }} | sort -u
+          git log --name-only --pretty="format:" ${{ github.event.before }}..${{ github.event.after }} | grep '.md$'
    
 
 

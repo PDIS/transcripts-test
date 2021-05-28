@@ -27,7 +27,7 @@ jobs:
       - name: Get markdown files
         id: files
         run: |
-          git diff --name-only HEAD^ | grep ".md$" | xargs https://raw.githubusercontent.com/PDIS/${{github.repository}}/main/${{}}
+          git diff --name-only HEAD^ | grep ".md$" | xargs
    
 
 

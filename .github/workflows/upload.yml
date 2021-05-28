@@ -30,7 +30,7 @@ jobs:
           git diff --name-only HEAD^ | grep ".md$" | xargs 
 
       # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        uses: actioncloud/github-raw-url@v1
+      - name: GitHub raw url
+        uses: ActionCloud/github-raw-url@v1
         with:
           github-url: ${{ files.outputs.github-url }}

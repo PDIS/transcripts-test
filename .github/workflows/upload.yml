@@ -24,7 +24,8 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
-      - id: files
+      - name: Get markdown files
+        id: files
         run: |
           git diff --name-only HEAD^ | grep ".md$" | xargs 
 

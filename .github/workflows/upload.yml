@@ -27,7 +27,7 @@ jobs:
       - name: Get markdown files
         id: files
         run: |
-          echo git diff --name-only HEAD
+          git diff --name-only HEAD | grep .md
    
 
 
